@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./dist/app.js",
+    "preinstall": "npm install pm2 -g && pm2 install pm2-logrotate",
+    "start": "pm2-runtime ./dist/app.js -i 0",
     "dev": "nodemon src/app.ts",
     "build": "tsc -p ."
   },
